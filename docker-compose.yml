@@ -1,0 +1,17 @@
+version: "3.7"
+
+services:
+  mosquitto:
+    image: eclipse-mosquitto:1.6.7
+    container_name: mosquitto
+    restart: unless-stopped
+    ports:
+      - "1883:1883"
+      - "9001:9001"
+    volumes:
+      - mosquitto-data:/mosquitto/data
+      - ./config/mosquitto.conf:/mosquitto/config/mosquitto.conf
+
+volumes:
+  mosquitto-data:
+    external: true
