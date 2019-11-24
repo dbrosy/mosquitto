@@ -11,6 +11,7 @@ services:
     volumes:
       - mosquitto-data:/mosquitto/data
       - ./config/mosquitto.conf:/mosquitto/config/mosquitto.conf
+      - ./config/password_file:/mosquitto/config/password_file
 
 volumes:
   mosquitto-data:
